@@ -34,7 +34,11 @@ const app = Vue.createApp({
                 .catch((error) => {
                     console.log(error)
                 })
-        }
+        },
+        clearList() {
+            console.log('Cleared list');
+            this.list = [];
+        },
     },
     computed: {
         myComputed() {

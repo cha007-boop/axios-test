@@ -20,20 +20,20 @@
         <div>
             <div class="row m-1">
                 <div class="form-group mx-sm-3 mb-2">
-                    <button @click="getAll" class="btn btn-primary">Get All</button>
+                    <button @click="getAll" class="btn btn-primary mb-2">Get All</button>
                 </div>
             </div>
             <div class="row m-1">
-                <form class="form-inline">
+                <form class="form-inline" @submit.prevent="getById">
                     <div class="form-group mx-sm-3 mb-2">
                         <input v-model="getId" type="number" placeholder="enter todo Id" class="form-control">
                     </div>
-                    <button @click="getById" class="btn btn-primary mb-2">Search</button>
+                    <button type="submit" class="btn btn-primary mb-2">Search</button>
                 </form>
             </div>
-            <div class="row">
-                <div class="col">
-
+            <div class="row m-1">
+                <div class="form-group mx-sm-3 mb-2">
+                    <button @click="clearList" class="btn btn-danger mb-2">Clear list</button>
                 </div>
             </div>
 
