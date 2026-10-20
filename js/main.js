@@ -5,6 +5,7 @@ const app = Vue.createApp({
         return {
             intro: 'Welcome to axios test',
             list: [],
+            getId: null,
 
         }
     },
@@ -14,10 +15,25 @@ const app = Vue.createApp({
         },
         getAll() {
             console.log('All data');
-            axiox
+            axios
                 .get(baseURL)
-                .then((response) => { this.list = response })
-                .catch((error) => { console.log(error) })
+                .then((response) => {
+                    this.list = response.data
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+        },
+        getById() {
+            console.log('Getting todo with id: ' + this.getId);
+            axios
+                .get(baseURL + '/' + this.getId)
+                .then((response) => {
+                    this.list = [response.data]
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
         }
     },
     computed: {

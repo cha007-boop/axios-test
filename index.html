@@ -19,9 +19,15 @@
         <h1>{{ intro }}</h1>
 
         <button @click="getAll">Get All</button>
+        <br>
+        <input v-model="getId" type="number" placeholder="enter todo Id">
+        <button @click="getById">Search</button>
 
-
-
+        <ul>
+            <li v-for="todo in list" :key="todo.id">
+                userid: {{ todo.userId }} - id: {{todo.id}} - title: {{todo.title}} - completed: {{todo.completed}}
+            </li>
+        </ul>
     </div>
 
     <!-- Import App -->
