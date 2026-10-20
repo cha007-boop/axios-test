@@ -17,11 +17,29 @@
         <div class="nav-bar"></div>
 
         <h1>{{ intro }}</h1>
+        <div>
+            <div class="row m-1">
+                <div class="form-group mx-sm-3 mb-2">
+                    <button @click="getAll" class="btn btn-primary">Get All</button>
+                </div>
+            </div>
+            <div class="row m-1">
+                <form class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input v-model="getId" type="number" placeholder="enter todo Id" class="form-control">
+                    </div>
+                    <button @click="getById" class="btn btn-primary mb-2">Search</button>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col">
 
-        <button @click="getAll">Get All</button>
-        <br>
-        <input v-model="getId" type="number" placeholder="enter todo Id">
-        <button @click="getById">Search</button>
+                </div>
+            </div>
+
+
+        </div>
+
 
         <ul>
             <li v-for="todo in list" :key="todo.id">
